@@ -1,55 +1,91 @@
-# fila-demandas-dados-bi
-# Atividade 9: Fila de demandas de dados e BI
+Atividade 9 - Fila de Demandas de Dados e BI
 
-**Área:** Dados e Business Intelligence | **Método:** Kanban | **Tempo Estimado:** 35 min
+## 1. Cenário
 
-## 📌 Cenário
-A equipe de dados (composta por 3 pessoas) recebe pedidos de relatórios e dashboards de todas as áreas da empresa, sendo que **todos** chegam rotulados como urgentes. Atualmente, existem **25 pedidos na fila**, e o tempo médio de espera para atendimento chegou a **6 semanas**.
+A equipe de Dados e Business Intelligence possui 3 integrantes e recebe solicitações de relatórios e dashboards de diferentes áreas da empresa.
 
----
+Atualmente, existem 25 pedidos na fila e o tempo médio de espera chegou a 6 semanas. O objetivo é organizar as solicitações, definir prioridades e melhorar o tempo de atendimento.
 
-## 🛠️ O que foi feito (Passo a Passo)
+## 2. Processo de entrada de novos pedidos
 
-### 1. Processo de Entrada para Novos Pedidos (Ingestão)
-Para evitar pedidos desorganizados enviados por mensagens informais (Slack, WhatsApp, e-mail direto), criamos um formulário padrão obrigatório:
-* **Informações Obrigatórias:**
-  * **Título e Descrição:** O que precisa ser feito e qual é o objetivo de negócio.
-  * **Área Solicitante e Solicitante:** Quem está pedindo e quem é o responsável pela validação.
-  * **Impacto Esperado:** Quantas pessoas serão beneficiadas e qual o ganho (ex: redução de horas gastas, aumento de receita).
-  * **Prazo Limite / Data Crítica:** Há alguma obrigatoriedade legal ou regulatória?
-* **Quem decide a prioridade?**
-  * Um comitê semanal composto por um representante de Dados e líderes de negócio define a prioridade com base nos critérios objetivos abaixo.
+Todos os pedidos deverão ser registrados por meio de um formulário de solicitação.
 
----
+### Informações obrigatórias:
+- Nome do solicitante.
+- Área da empresa.
+- E-mail ou contato.
+- Descrição da necessidade.
+- Objetivo do relatório ou dashboard.
+- Prazo desejado.
+- Quantidade de pessoas que utilizarão o relatório.
+- Impacto para o negócio.
+- Existência de prazo legal ou obrigatório.
 
-### 2. Critérios Objetivos de Priorização
-Para eliminar o argumento de que "tudo é urgente", adotamos uma matriz de pontuação baseada em impacto e esforço:
-1. **Valor de Negócio (Impacto financeiro ou estratégico):** Alto (3 pts), Médio (2 pts), Baixo (1 pt).
-2. **Prazo Legal / Regulatório:** Há multa ou risco jurídico se não for feito? (Sim = Prioridade máxima / Não = Segue o fluxo normal).
-3. **Quantidade de Usuários Impactados:** Equipe inteira, diretoria ou apenas uma pessoa?
-4. **Esforço Técnico (Estimativa da equipe de dados):** Tarefas rápidas (quick wins) ganham tração para aliviar a fila.
+### Responsáveis pela aprovação
 
----
+O responsável pela análise inicial será o líder da equipe de Dados e BI.
 
-### 3. Desenho do Quadro Kanban com Limite de WIP
-Para visualizar o fluxo e evitar gargalos com uma equipe de 3 pessoas, estruturamos o quadro com os seguintes estágios e **Limites de WIP (Work in Progress / Trabalho em Andamento)**:
+A prioridade será definida pelo líder em conjunto com a equipe, considerando os critérios estabelecidos.
 
-| Backlog | A Fazer (To Do) | Em Andamento (WIP Max: 3) | Validação com Solicitante (WIP Max: 2) | Concluído (Done) |
-| :--- | :--- | :--- | :--- | :--- |
-| *Novos pedidos triados aguardando priorização.* | *Itens priorizados para o ciclo atual (Sprint).* | *Máximo de 1 tarefa por analista (Total: 3 simultâneas).* | *Entregue para o solicitante testar e aprovar.* | *Dashboards e relatórios publicados em produção.* |
+Pedidos incompletos retornarão ao solicitante para complementação das informações.
 
-* **Regra do WIP:** Nenhum analista puxa uma nova tarefa se o limite da coluna "Em Andamento" ou "Validação" estiver estourado, garantindo foco na entrega em vez de iniciar múltiplos projetos ao mesmo tempo.
+## 3. Critérios de priorização
 
----
+Cada solicitação receberá uma pontuação de acordo com os seguintes critérios:
 
-### 4. Ação para Reduzir Pedidos Repetidos e de Baixo Valor
-* **Criação de um Painel de Autoatendimento (Self-Service BI):**
-  * Desenvolver dashboards coringa ou treinamentos básicos para as áreas de negócio (ex: Power BI / Looker Studio), permitindo que os próprios solicitantes filtrem e extraiam os dados mais comuns sem precisar abrir chamados recorrentes.
-  * **FAQ / Central de Conhecimento:** Documentar relatórios já existentes para evitar duplicação de pedidos.
+| Critério | Pontuação |
+|---|---|
+| Prazo legal ou obrigatório | 5 pontos |
+| Alto impacto financeiro | 4 pontos |
+| Benefício para várias áreas | 3 pontos |
+| Grande quantidade de usuários | 2 pontos |
+| Baixo impacto para o negócio | 1 ponto |
 
----
+### Classificação de prioridade
 
-## 🎯 Resultado Esperado Alcançado
-* Processo de entrada padronizado e transparente.
-* Fim do critério "quem grita mais alto" através de priorização objetiva.
-* Visibilidade do fluxo de trabalho com controle de gargalos via limites de WIP.
+- Alta: 10 pontos ou mais.
+- Média: de 5 a 9 pontos.
+- Baixa: até 4 pontos.
+
+Em caso de empate, terá prioridade o pedido com prazo mais próximo.
+
+## 4. Quadro Kanban
+
+O quadro será dividido nas seguintes etapas:
+
+1. Entrada: novos pedidos recebidos.
+2. Triagem: análise e classificação das solicitações.
+3. A fazer: pedidos aprovados e aguardando execução.
+4. Em andamento: solicitações em desenvolvimento.
+5. Validação com solicitante: conferência dos resultados pela área que solicitou.
+6. Concluído: pedidos aprovados e entregues.
+
+### Limite WIP (trabalho em andamento)
+
+Para evitar excesso de tarefas simultâneas, serão estabelecidos os seguintes limites:
+
+- Triagem: máximo de 3 tarefas.
+- A fazer: máximo de 5 tarefas.
+- Em andamento: máximo de 3 tarefas.
+- Validação com solicitante: máximo de 3 tarefas.
+
+Quando uma coluna atingir seu limite, novos pedidos não poderão avançar até que uma tarefa seja concluída ou movida.
+
+## 5. Ação para reduzir pedidos repetidos
+
+Será criado um painel de autoatendimento com relatórios e dashboards já disponíveis.
+
+Os usuários poderão consultar informações, indicadores e relatórios existentes sem precisar abrir uma nova solicitação.
+
+Também será disponibilizado um catálogo de dashboards, com orientações de acesso e utilização.
+
+## 6. Resultado esperado
+
+Com a implantação do processo, espera-se:
+
+- Organizar a fila de solicitações.
+- Reduzir pedidos duplicados.
+- Melhorar a definição de prioridades.
+- Evitar excesso de tarefas em andamento.
+- Aumentar a transparência do atendimento.
+- Reduzir o tempo médio de espera.
