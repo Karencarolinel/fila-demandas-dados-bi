@@ -1,10 +1,5 @@
-Atividade 9 - Fila de Demandas de Dados e BI
-Critério de prioridade        Pontuação
-Prazo legal ou obrigatório    5 pontos
-Alto impacto financeiro       4 pontos
-Benefício para várias áreas   3 pontos
-Grande quantidade de usuários 2 pontos
-Baixo impacto para o negócio  1 ponto
+Fila de Demandas de Dados e BI
+
 ## 1. Cenário
 
 A equipe de Dados e Business Intelligence possui 3 integrantes e recebe solicitações de relatórios e dashboards de diferentes áreas da empresa.
